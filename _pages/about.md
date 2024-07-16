@@ -11,4 +11,4 @@ I am a Physics PhD student at [Northwestern University](https://physics.northwes
 
 Contact 
 ======
-Please contact me at: cpb@u.northwestern.edu for questions, comments, collaboration, or compliments on my avatar.
+Please contact me at: cpb@u.northwestern.edu for questions, comments, collaboration, or book suggestions!

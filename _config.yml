@@ -11,7 +11,7 @@ locale                   : "en-US"
 title                    : "Complex Systems"
 title_separator          : "-"
 name                     : &name "Charlie Burton / Kovacs Group"
-description              : &description "kid who somehow convinced a graduate committee to let me continue studying physics"
+description              : &description 
 url                      : https://cpatb.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "cpatb/cpatb.github.io"
@@ -52,7 +52,7 @@ author:
   facebook         : # Username
   flickr           : # Username
   foursquare       : # Username
-  goodreads        : # Username
+  goodreads        : "goodreads.com/cpburton"
   google_plus      : # Username
   keybase          : # Username
   instagram        : # Username
