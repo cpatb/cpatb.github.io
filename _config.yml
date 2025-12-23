@@ -8,9 +8,9 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "Complex Systems"
+title                    : "Charlie Burton / Driscoll Lab"
 title_separator          : "-"
-name                     : &name "Charlie Burton / Kovacs Group"
+name                     : &name "Charlie"
 description              : &description 
 url                      : https://cpatb.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -22,9 +22,9 @@ repository               : "cpatb/cpatb.github.io"
 author:
   # Biographic information
   avatar           : "profile.png"
-  name             : "Charlie Burton / Kovacs Group"
+  name             : "Charlie Burton / Driscoll Lab"
   pronouns         : "he/him"  
-  bio              : "Complex fluids, soft matter, and complex systems."
+  bio              : "Complex fluids and soft matter."
   location         : "Chicago,USA"
   employer         : "Northwestern University"
   uri              : # URL
