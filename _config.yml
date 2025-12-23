@@ -8,7 +8,7 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "Charlie Burton / Driscoll Lab"
+title                    : "Charlie Burton"
 title_separator          : "-"
 name                     : &name "Charlie"
 description              : &description 
@@ -52,7 +52,7 @@ author:
   facebook         : # Username
   flickr           : # Username
   foursquare       : # Username
-  goodreads        : "https://www.goodreads.com/cpburton"
+  goodreads        : "https://www.goodreads.com/user/show/144171702-charlie-burton"
   google_plus      : # Username
   keybase          : # Username
   instagram        : # Username
