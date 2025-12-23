@@ -8,9 +8,9 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "Soft Condensed Matter"
+title                    : "Complex Systems"
 title_separator          : "-"
-name                     : &name "Charlie Burton / Driscoll Lab"
+name                     : &name "Charlie Burton / Kovacs Group"
 description              : &description 
 url                      : https://cpatb.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -22,7 +22,7 @@ repository               : "cpatb/cpatb.github.io"
 author:
   # Biographic information
   avatar           : "profile.png"
-  name             : "Charlie Burton / Driscoll Lab"
+  name             : "Charlie Burton / Kovacs Group"
   pronouns         : "he/him"  
   bio              : "Complex fluids, soft matter, and complex systems."
   location         : "Chicago,USA"
@@ -32,7 +32,7 @@ author:
 
   # Academic websites
   arxiv            : # URL - Update with the correct link to your profile
-  googlescholar    : #"https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
+  googlescholar    : #"https://scholar.google.com/citations?user=HRr72-UAAAAJ&hl=en&authuser=1&oi=ao"
   impactstory      : # URL
   orcid            : #"http://orcid.org/yourorcidurl"
   semantic         : # URL
