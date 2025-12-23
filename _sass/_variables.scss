@@ -108,11 +108,12 @@ $xing-color                 : #006567;
 
 
 /* links */
-$link-color                 : $info-color;
-$link-color-hover           : mix(#000, $link-color, 25%);
-$link-color-visited         : mix(#fff, $link-color, 25%);
-$masthead-link-color        : $primary-color;
-$masthead-link-color-hover  : mix(#000, $primary-color, 25%);
+$link-color                 : #4E2A84; /* Northwestern Purple */
+$link-color-hover           : #000000; /* Black on hover */
+$link-color-visited         : #4E2A84;
+$masthead-link-color        : #333333; /* Navigation menu text (Dark Gray) */
+$masthead-link-color-hover  : #4E2A84; /* Navigation turns purple on hover */
+
 
 
 /*
