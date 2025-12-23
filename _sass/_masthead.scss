@@ -4,7 +4,7 @@
 
 .masthead {
   position: fixed;
-  background: rgb(229, 184, 255);
+  background: #4E2A84;
   border-bottom: 1px solid $border-color;
   height: $masthead-height;
   top: 0;
@@ -37,7 +37,7 @@
 }
 
 .masthead__menu {
-  background: rgb(229, 184, 255);
+  background: #4E2A84;
   ul {
     margin: 0;
     padding: 0;
@@ -47,7 +47,7 @@
 }
 
 .masthead__menu-item {
-  background: rgb(229, 184, 255);
+  background: #4E2A84;
   display: block;
   list-style-type: none;
   white-space: nowrap;
