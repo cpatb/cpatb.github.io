@@ -8,7 +8,10 @@ main:
 
   - #title: "Teaching"
     #url: /teaching/    
-    
+
+  - title: "Gallery" 
+    url: /gallery/
+
   - #title: "Portfolio"
     #url: /portfolio/
         
