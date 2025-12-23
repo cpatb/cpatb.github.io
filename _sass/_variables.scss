@@ -6,7 +6,7 @@
    Typography
    ========================================================================== */
 
-$doc-font-size              : 16;
+$doc-font-size              : 18;
 
 /* paragraph indention */
 $paragraph-indent           : false; // true, false (default)
@@ -14,7 +14,7 @@ $indent-var                 : 1.3em;
 
 /* system typefaces */
 $serif                      : Georgia, Times, serif;
-$sans-serif                 : -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
+$sans-serif                 : Helvetica, "Helvetica Neue", Arial, sans-serif;
 $monospace                  : Monaco, Consolas, "Lucida Console", monospace;
 
 /* sans serif typefaces */
@@ -55,24 +55,30 @@ $sidebar-link-max-width     : 250px;
    Colors
    ========================================================================== */
 
-$gray                       : #7a8288;
-$dark-gray                  : mix(#000, $gray, 40%);
-$darker-gray                : mix(#000, $gray, 80%);
-$light-gray                 : mix(#fff, $gray, 50%);
-$lighter-gray               : mix(#fff, $gray, 90%);
+/* Northwestern & Driscoll Lab Palette */
+$northwestern-purple        : #4E2A84;
+$rich-black                 : #101010;
+$clean-gray                 : #e0e0e0;
+
+$gray                       : #666; 
+$dark-gray                  : #333; 
+$darker-gray                : #111; 
+$light-gray                 : #f2f2f2; 
+$lighter-gray               : #fafafa; 
 
 $body-color                 : #fff;
-$background-color           : #fff;;
-$code-background-color      : #fff;
-$code-background-color-dark : $dark-gray;
-$text-color                 : rgb(0,0,0);
-$border-color               : $dark-gray;
+$background-color           : #fff;
+$code-background-color      : #fafafa;
+$code-background-color-dark : #222;
+$text-color                 : #333333; /* Dark gray is softer than pure black */
+$border-color               : #dddddd;
 
-$primary-color              : #7a8288;
+/* This controls the sidebar, buttons, and accents */
+$primary-color              : $northwestern-purple; 
+$info-color                 : $northwestern-purple; /* Makes links purple by default */
 $success-color              : #62c462;
 $warning-color              : #f89406;
 $danger-color               : #ee5f5b;
-$info-color                 : #52adc8;
 
 /* brands */
 $behance-color              : #1769FF;
