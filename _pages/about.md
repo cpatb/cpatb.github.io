@@ -1,14 +1,24 @@
 ---
 permalink: /
 title: ""
-author_profile: true
+author_profile: false
 redirect_from: 
   - /about/
   - /about.html
 ---
 
-<div class="home-intro">
-  <p class="lead-text">I am a second-year Physics PhD student at <a href="https://physics.northwestern.edu/">Northwestern University</a>, working with <a href="https://driscollphysicslab.org">Prof. Michelle Driscoll</a> on shear-thickening phenomena and soft condensed matter. Before Northwestern, I worked with <a href="https://medicine.iu.edu/faculty/6529/territo-paul">Dr. Paul Territo</a> at the Stark Neurosciences Research Institute in the Indiana University School of Medicine. Earlier, I studied physics and neuroscience at Earlham College.</p>
+<div class="home-hero">
+  <img class="home-hero__photo" src="/images/profile.png" alt="Charlie Burton">
+  <div class="home-hero__content">
+    <h1 class="home-hero__name">Charlie Burton</h1>
+    <p class="home-hero__tagline">Physics PhD &middot; Northwestern University</p>
+    <p class="home-hero__bio">I am a second-year Physics PhD student at <a href="https://physics.northwestern.edu/">Northwestern University</a>, working with <a href="https://driscollphysicslab.org">Prof. Michelle Driscoll</a> on shear-thickening phenomena and soft condensed matter. Before Northwestern, I worked with <a href="https://medicine.iu.edu/faculty/6529/territo-paul">Dr. Paul Territo</a> at the Stark Neurosciences Research Institute in the Indiana University School of Medicine. Earlier, I studied physics and neuroscience at Earlham College.</p>
+    <div class="home-hero__links">
+      <a href="mailto:cpb@u.northwestern.edu"><i class="fas fa-envelope"></i> Email</a>
+      <a href="https://github.com/cpatb"><i class="fab fa-github"></i> GitHub</a>
+      <a href="/files/CV.pdf"><i class="fas fa-file-alt"></i> CV</a>
+    </div>
+  </div>
 </div>
 
 <div class="home-section">

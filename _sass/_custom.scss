@@ -18,7 +18,6 @@ select {
 
 h1, h2, h3, h4, h5, h6,
 .page__title,
-.author__name,
 .masthead__menu-item a {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
@@ -40,35 +39,137 @@ h1, h2, h3, h4, h5, h6,
 
 
 /*
-   Sidebar — author profile tweaks
+   Full-width layout — override Susy grid
+   Both .page (single layout) and .archive (archive layout) need this
    ========================================================================== */
 
-.author__avatar img {
-  border-color: rgba(78, 42, 132, 0.2) !important;
+.page,
+.archive {
+  @include breakpoint($large) {
+    float: none !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
 }
 
-.author__bio {
-  font-size: 0.82em;
-  line-height: 1.6;
-  color: #555;
-}
-
-.author__urls a {
-  font-size: 0.82em !important;
+/* Suppress the default page title — hero section provides the heading on home */
+.home-page .page__title {
+  display: none;
 }
 
 
 /*
    =========================================================
-   HOME PAGE
+   HOME HERO SECTION
    ========================================================= */
 
-.lead-text {
-  font-size: 1.02em;
-  line-height: 1.85;
-  color: #2a2a2a;
-  margin-bottom: 0;
+.home-hero {
+  display: flex;
+  align-items: flex-start;
+  gap: 2.5rem;
+  padding: 2rem 0 2.5rem;
+  margin-bottom: 2.75rem;
+  border-bottom: 1px solid #ebebeb;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 }
+
+.home-hero__photo {
+  flex-shrink: 0;
+  width: 165px;
+  height: 165px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(78, 42, 132, 0.15);
+  display: block;
+}
+
+.home-hero__content {
+  flex: 1;
+  min-width: 0;
+  padding-top: 0.25rem;
+}
+
+.home-hero__name {
+  font-size: 1.75em !important;
+  font-weight: 700 !important;
+  margin: 0 0 0.2rem !important;
+  color: #111 !important;
+  letter-spacing: -0.025em !important;
+  line-height: 1.1 !important;
+}
+
+.home-hero__tagline {
+  font-size: 0.84em;
+  color: $northwestern-purple;
+  font-weight: 600;
+  margin: 0 0 1.1rem !important;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.home-hero__bio {
+  font-size: 0.97em;
+  line-height: 1.82;
+  color: #2e2e2e;
+  margin-bottom: 1.3rem !important;
+
+  a {
+    color: $northwestern-purple;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.home-hero__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.38em;
+    font-size: 0.8em;
+    font-weight: 500;
+    color: #444;
+    text-decoration: none !important;
+    padding: 0.35em 0.9em;
+    border: 1px solid #d4d4d4;
+    border-radius: 20px;
+    transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+
+    &:hover {
+      border-color: $northwestern-purple;
+      color: $northwestern-purple !important;
+      background: rgba(78, 42, 132, 0.04);
+    }
+
+    i {
+      font-size: 0.92em;
+    }
+  }
+}
+
+
+/*
+   =========================================================
+   HOME PAGE SECTIONS
+   ========================================================= */
 
 .home-section {
   margin-top: 2.5rem;
@@ -117,44 +218,7 @@ h1, h2, h3, h4, h5, h6,
   }
 }
 
-/* Recent publications on home page */
-.pub-teaser {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 1.1rem;
-}
-
-.pub-teaser__item {
-  padding: 0.65rem 0;
-  border-bottom: 1px solid #f0f0f0;
-
-  &:last-child {
-    border-bottom: none;
-  }
-}
-
-.pub-teaser__title {
-  font-size: 0.88em;
-  font-weight: 600;
-  margin: 0 0 0.15rem;
-  line-height: 1.4;
-
-  a {
-    color: $northwestern-purple;
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-}
-
-.pub-teaser__meta {
-  font-size: 0.78em;
-  color: #888;
-  margin: 0;
-}
-
+/* Recent publications teaser */
 .muted-note {
   font-size: 0.88em;
   color: #888;
@@ -182,6 +246,15 @@ h1, h2, h3, h4, h5, h6,
   line-height: 1.8;
   color: #333;
   margin-bottom: 0.5rem;
+
+  a {
+    color: $northwestern-purple;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
 .project-grid {
@@ -281,7 +354,6 @@ h1, h2, h3, h4, h5, h6,
   }
 }
 
-/* Archive items (used by publications collection) */
 .archive__item {
   padding-bottom: 1.1rem;
   margin-bottom: 1.1rem;

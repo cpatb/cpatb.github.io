@@ -2,7 +2,8 @@
 layout: single
 title: "Research"
 permalink: /research/
-author_profile: true
+author_profile: false
+classes: wide
 ---
 
 <p class="research-intro">My work focuses on the physics of dense suspensions as they pertain to complex fluids. These are systems where particles are packed tightly enough in a solvent that their collective behavior governs macroscopic flow. I am particularly interested in the transition between flowing and jammed states, and the role of contact forces and microstructure in driving shear thickening. I work in the <a href="https://driscollphysicslab.org">Driscoll Lab</a> at Northwestern University.</p>
