@@ -1,26 +1,13 @@
-# main links links
+# main links
 main:
   - title: "Research"
-    url: https://scholar.google.com/citations?user=HRr72-UAAAAJ&hl=en&authuser=1&oi=ao
+    url: /research/
 
-  - #title: "Talks"
-    #url: /talks/    
+  - title: "Publications"
+    url: /publications/
 
-  - #title: "Teaching"
-    #url: /teaching/    
-
-  - title: "Gallery" 
-    url: /gallery/
-
-  - #title: "Portfolio"
-    #url: /portfolio/
-        
   - title: "Blog"
     url: /blog/
 
-    
   - title: "CV"
     url: /files/CV.pdf
-    
-  - #title: "Guide"
-    #url: /markdown/
