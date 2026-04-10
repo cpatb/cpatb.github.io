@@ -5,15 +5,15 @@ permalink: /research/
 author_profile: true
 ---
 
-<p class="research-intro">My work focuses on the physics of dense suspensions — systems where particles are packed tightly enough that their collective behavior governs macroscopic flow. I am particularly interested in the transition between flowing and jammed states, and the role of contact forces and microstructure in driving shear thickening. I work in the <a href="https://driscollphysicslab.org">Driscoll Lab</a> at Northwestern University.</p>
+<p class="research-intro">My work focuses on the physics of dense suspensions as they pertain to complex fluids. These are systems where particles are packed tightly enough in a solvent that their collective behavior governs macroscopic flow. I am particularly interested in the transition between flowing and jammed states, and the role of contact forces and microstructure in driving shear thickening. I work in the <a href="https://driscollphysicslab.org">Driscoll Lab</a> at Northwestern University.</p>
 
 <div class="project-grid">
 
   <div class="project-card">
-    <div class="project-card__title">Discontinuous Shear Thickening in Dense Suspensions</div>
+    <div class="project-card__title">Shear Thickened Impact and Relaxation Dynamics in Dense Suspensions</div>
     <span class="project-card__status active">Active</span>
     <p class="project-card__body">
-      Dense suspensions can exhibit a dramatic, orders-of-magnitude increase in viscosity under applied stress — a phenomenon known as discontinuous shear thickening (DST). I am investigating the microscopic origins of DST, with a focus on how frictional interparticle contacts and stress-induced microstructural changes drive the transition from a flowing suspension to a near-solid state. This work combines rheological measurements with particle-scale imaging to connect local structure to bulk behavior.
+      Dense suspensions can exhibit a dramatic, orders-of-magnitude increase in viscosity under applied stress, a phenomenon known as discontinuous shear thickening (DST). I am looking at how different suspensions behave approaching and beyond DST, with a focus on how suspension particle characteristics drive the transition from a flowing suspension to a near-solid state. This work uses bulk rheology and drop impact experiments to look at high-shear, free surface flows in dense suspensions.
     </p>
   </div>
 
@@ -29,7 +29,7 @@ author_profile: true
     <div class="project-card__title">Previous Work: Neuroimaging and PET Tracer Development</div>
     <span class="project-card__status completed">Completed</span>
     <p class="project-card__body">
-      Before joining Northwestern, I worked with Dr. Paul Territo at the Stark Neurosciences Research Institute (Indiana University School of Medicine) on PET-based neuroimaging and small-molecule tracer development. This work involved quantitative imaging analysis, radiotracer synthesis, and preclinical models of neurological disease.
+      Before joining Northwestern, I worked with Dr. Paul Territo at the Stark Neurosciences Research Institute (Indiana University School of Medicine) on PET-based neuroimaging, tracer development, and mouse model development for translational research into Alzheimer's Disease (AD) and ADRD. This work involved quantitative imaging analysis, novel whole-brain network and connectivity approaches to metabolic and vascular dynamics in aging and diseased mice, preclinical models of neurological disease.
     </p>
   </div>
 
