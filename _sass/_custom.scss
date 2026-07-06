@@ -1,61 +1,19 @@
 /* ==========================================================================
-   CUSTOM DESIGN LAYER — "Evening lab"
-   Dark, atmospheric, warm. Near-black warm ground, bone ink, one copper
-   accent. Schibsted Grotesk only. Left-rail section grammar instead of a
-   plain stacked column; a live 2-D suspension drifts behind the home hero.
-   Contrast (WCAG AA, all verified): ink 15.3:1, body 8.9:1, muted 5.4:1,
-   copper 7.8:1 on $site-bg.
+   CUSTOM DESIGN LAYER — "Clean, modern, confident"
+   One accent (Northwestern purple), Schibsted Grotesk, a single narrow
+   centered column, hairline rules instead of boxes.
    ========================================================================== */
 
-/* Token aliases (canonical values live in _variables.scss) */
-$ink        : $site-ink;
-$body-text  : $site-body;
-$muted      : $site-muted;
-$rule       : $site-rule;
-$accent     : $site-accent;
-$accent-hi  : $site-accent-bright;
-$bg         : $site-bg;
-$surface    : $site-surface;
-$accent-dim : rgba(217, 154, 91, 0.08);
+/* Design tokens */
+$ink        : #17161c;                    /* primary text, 16.9:1 on white */
+$ink-soft   : #45444d;                    /* body prose, 9.7:1 */
+$ink-muted  : #63616c;                    /* metadata only, 5.9:1 */
+$rule       : #e9e7ef;                    /* purple-tinted hairline */
+$accent     : $northwestern-purple;       /* #4E2A84, 10.6:1 on white */
+$accent-soft: rgba(78, 42, 132, 0.07);
+$footer-bg  : #1a1425;                    /* deep purple-black frame */
 
-$ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
-
-/* Rail geometry — shared by home sections, research entries, blog list */
-$rail-width: 10.5rem;
-$rail-gap  : 3rem;
-$rail-break: 940px;
-
-
-/*
-   Ground & atmosphere
-   ========================================================================== */
-
-html {
-  background: $bg;
-}
-
-body {
-  background: $bg;
-  color: $body-text;
-  /* The hero canvas spans 100vw; clip the scrollbar-width overflow */
-  overflow-x: clip;
-}
-
-/* One quiet pool of warm light, top of the page. Fixed so it reads as
-   ambience, not as a section decoration. */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  background: radial-gradient(90rem 46rem at 68% -10rem, rgba(217, 154, 91, 0.055), transparent 62%);
-}
-
-#main {
-  position: relative;
-  z-index: 1;
-}
+$ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
 
 
 /*
@@ -78,12 +36,12 @@ h1, h2, h3, h4, h5, h6,
   font-family: 'Schibsted Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
-h1, h2, h3 {
-  text-wrap: balance;
+body {
   color: $ink;
 }
 
-h4, h5, h6 {
+h1, h2, h3 {
+  text-wrap: balance;
   color: $ink;
 }
 
@@ -92,12 +50,10 @@ h4, h5, h6 {
 }
 
 ::selection {
-  background: rgba(217, 154, 91, 0.30);
-  color: $ink;
+  background: rgba(78, 42, 132, 0.14);
 }
 
-a:focus-visible,
-button:focus-visible {
+a:focus-visible {
   outline: 2px solid $accent;
   outline-offset: 2px;
   border-radius: 2px;
@@ -105,11 +61,10 @@ button:focus-visible {
 
 /* Page titles (Research, Publications, Blog, posts) */
 .page__title {
-  font-size: clamp(1.9rem, 4vw, 2.5rem) !important;
+  font-size: clamp(1.9rem, 4vw, 2.4rem) !important;
   font-weight: 800;
   letter-spacing: -0.025em;
   line-height: 1.08;
-  color: $ink !important;
   margin-bottom: 1.5rem;
 }
 
@@ -127,68 +82,14 @@ button:focus-visible {
   text-decoration: none;
 
   &:hover {
-    color: $accent-hi;
     text-decoration: underline;
     text-underline-offset: 0.18em;
   }
 }
 
-/* Prose furniture on dark */
-.page__content {
-  color: $body-text;
-
-  li {
-    color: $body-text;
-  }
-
-  blockquote {
-    border-left: 2px solid $rule;
-    color: $muted;
-    font-style: italic;
-  }
-
-  hr {
-    border: 0;
-    border-top: 1px solid $rule;
-    margin: 2rem 0;
-  }
-
-  /* Plots and figures are white-ground images; frame them quietly.
-     (Excludes styled site images like the hero portrait.) */
-  img:not([class]) {
-    border-radius: 8px;
-    border: 1px solid $rule;
-    background: #fff;
-  }
-
-  code {
-    background: $surface;
-    color: $ink;
-    border-radius: 4px;
-  }
-
-  pre {
-    background: $surface;
-    border: 1px solid $rule;
-    border-radius: 8px;
-  }
-}
-
-.highlight {
-  background: $surface;
-
-  pre {
-    background: $surface;
-  }
-
-  .c, .c1, .cm, .cs {
-    color: $muted; /* comments readable on dark */
-  }
-}
-
 
 /*
-   Layout — 58rem frame, narrow prose, rail grammar on list pages
+   Layout — one narrow centered column, aligned masthead to footer
    ========================================================================== */
 
 .page,
@@ -203,7 +104,6 @@ button:focus-visible {
   }
 }
 
-/* Default: a comfortable reading column (posts, CV, 404). */
 #main {
   max-width: 44rem !important;
   margin-left: auto;
@@ -212,29 +112,26 @@ button:focus-visible {
   padding-right: 1.25rem;
 }
 
-/* Pages built on the rail grammar get the wide frame. Browsers without
-   :has() keep the narrow column — everything still reads. */
-#main:has(.home-hero),
-#main:has(.project-list),
-#main:has(.entries-list),
-#main:has(.pubs-note) {
-  max-width: 58rem !important;
-}
-
 .masthead__inner-wrap,
 .page__footer footer {
-  max-width: 58rem !important;
+  max-width: 44rem !important;
   margin-left: auto;
   margin-right: auto;
 }
 
+/* Suppress the default page title on home — the hero provides the heading */
+.home-page .page__title {
+  display: none;
+}
+
 
 /*
-   Masthead — quiet dark bar, wordmark left, muted nav right
+   Masthead
    ========================================================================== */
 
 .masthead {
   box-shadow: none;
+  border-bottom: none !important;
 }
 
 .masthead__inner-wrap {
@@ -242,82 +139,49 @@ button:focus-visible {
 }
 
 .masthead__menu-item a {
-  color: $muted;
+  color: rgba(255, 255, 255, 0.82);
   font-weight: 500;
   font-size: 0.95em;
   transition: color 0.15s ease;
 
   &:hover {
-    color: $ink;
+    color: #fff;
   }
 }
 
 .masthead__menu-item--lg a {
-  color: $ink;
+  color: #fff;
   font-weight: 700;
   letter-spacing: -0.015em;
   font-size: 1.05em;
 }
 
-/* Greedy-nav overflow button + dropdown, dark */
-.greedy-nav {
-  background: transparent !important;
-
-  button {
-    background: transparent;
-    color: $muted;
-  }
-
-  .hidden-links {
-    background: $surface;
-    border: 1px solid $rule;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
-
-    a {
-      color: $body-text;
-
-      &:hover {
-        color: $ink;
-        background: rgba(236, 231, 223, 0.05);
-      }
-    }
-
-    &::before, &::after {
-      display: none;
-    }
-  }
-}
-
 
 /*
-   Footer — dissolves into the ground, hairline above
+   Footer — dark frame closing the page
    ========================================================================== */
 
 .page__footer {
-  background-color: transparent;
-  border-top: 1px solid $rule;
-  color: $muted;
-  margin-top: 4.5rem;
+  background-color: $footer-bg;
+  border-top: none;
+  color: rgba(255, 255, 255, 0.62);
 
+  /* Neutralize the theme's per-brand icon colors (e.g. orange RSS) */
   .fa, .fas, .fab, .far, .fal,
   .social-icons .fa, .social-icons .fas, .social-icons .fab, .social-icons .far {
-    color: $muted !important;
+    color: rgba(255, 255, 255, 0.62) !important;
   }
 
-  a {
-    color: $muted;
+  a:hover {
+    color: #fff;
 
-    &:hover {
-      color: $ink;
-
-      .fas, .fab, .far, .fal {
-        color: $ink;
-      }
+    .fas, .fab, .far, .fal {
+      color: #fff;
     }
   }
 
   footer {
-    padding: 1.25rem 1.25rem 2.25rem;
+    padding: 0.5rem 1.25rem 2rem;
   }
 }
 
@@ -329,56 +193,38 @@ button:focus-visible {
 
 .page__footer-copyright {
   font-size: 0.78em;
-  color: rgba(143, 136, 124, 0.75);
+  color: rgba(255, 255, 255, 0.45);
 }
 
 
 /*
-   Home — hero over a drifting suspension
+   Home — hero
    ========================================================================== */
 
 .home-hero {
-  position: relative;
   display: flex;
   align-items: center;
-  gap: 2.5rem;
-  padding: 4rem 0 4.25rem;
+  gap: 2.25rem;
+  padding: 2.5rem 0 3rem;
   border-bottom: 1px solid $rule;
 
   @media (max-width: 640px) {
     flex-direction: column;
     align-items: flex-start;
-    gap: 1.75rem;
-    padding: 2.25rem 0 2.75rem;
+    gap: 1.5rem;
+    padding: 1.5rem 0 2.25rem;
   }
-}
-
-/* The suspension canvas bleeds across the full viewport behind the hero.
-   Drawn by /assets/js/suspension.js; decorative only (aria-hidden). */
-.home-hero__canvas {
-  position: absolute;
-  top: -90px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100vw;
-  height: calc(100% + 130px);
-  pointer-events: none;
-  z-index: -1;
-  /* No CSS entrance here: suspension.js ramps its own draw alpha, which
-     also works where CSS animations don't run (headless, paused tabs). */
-  -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent 98%);
-  mask-image: linear-gradient(to bottom, #000 55%, transparent 98%);
 }
 
 .home-hero__photo {
   flex-shrink: 0;
-  width: 132px;
-  height: 132px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
   object-fit: cover;
   border: none;
   outline: 1px solid $rule;
-  outline-offset: 5px;
+  outline-offset: 4px;
   display: block;
 }
 
@@ -388,29 +234,28 @@ button:focus-visible {
 }
 
 .home-hero__name {
-  font-size: clamp(2.3rem, 6vw, 3.3rem) !important;
+  font-size: clamp(2rem, 5vw, 2.7rem) !important;
   font-weight: 800 !important;
-  margin: 0 0 0.35rem !important;
+  margin: 0 0 0.3rem !important;
   letter-spacing: -0.03em !important;
-  line-height: 1.04 !important;
+  line-height: 1.05 !important;
   color: $ink !important;
 }
 
 .home-hero__tagline {
   font-size: 1.02rem;
-  color: $muted;
-  font-weight: 500;
+  color: $accent;
+  font-weight: 600;
   letter-spacing: 0;
   text-transform: none;
-  margin: 0 0 1.15rem !important;
+  margin: 0 0 1.1rem !important;
 }
 
 .home-hero__bio {
   font-size: 0.98rem;
-  line-height: 1.8;
-  color: $body-text;
-  margin-bottom: 1.5rem !important;
-  max-width: 42rem;
+  line-height: 1.75;
+  color: $ink-soft;
+  margin-bottom: 1.4rem !important;
 
   a {
     color: $accent;
@@ -418,7 +263,6 @@ button:focus-visible {
     font-weight: 500;
 
     &:hover {
-      color: $accent-hi;
       text-decoration: underline;
       text-underline-offset: 0.18em;
     }
@@ -436,17 +280,17 @@ button:focus-visible {
     gap: 0.4em;
     font-size: 0.85rem;
     font-weight: 500;
-    color: $body-text;
+    color: $ink-soft;
     text-decoration: none !important;
-    padding: 0.4em 1em;
+    padding: 0.38em 0.95em;
     border: 1px solid $rule;
     border-radius: 999px;
     transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
 
     &:hover {
-      border-color: rgba(217, 154, 91, 0.55);
-      color: $accent-hi !important;
-      background: $accent-dim;
+      border-color: $accent;
+      color: $accent !important;
+      background: $accent-soft;
     }
 
     i {
@@ -455,17 +299,15 @@ button:focus-visible {
   }
 }
 
-/* Entrance — one staggered rise, then stillness */
-.home-hero__photo { animation: hero-rise 0.7s $ease-out-quint 0.05s both; }
-.home-hero__name { animation: hero-rise 0.7s $ease-out-quint 0.10s both; }
-.home-hero__tagline { animation: hero-rise 0.7s $ease-out-quint 0.16s both; }
-.home-hero__bio { animation: hero-rise 0.7s $ease-out-quint 0.22s both; }
-.home-hero__links { animation: hero-rise 0.7s $ease-out-quint 0.28s both; }
+/* Entrance — one quiet rise on load */
+.home-hero {
+  animation: hero-rise 0.55s $ease-out-quart both;
+}
 
 @keyframes hero-rise {
   from {
     opacity: 0;
-    transform: translateY(14px);
+    transform: translateY(10px);
   }
   to {
     opacity: 1;
@@ -474,13 +316,8 @@ button:focus-visible {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .home-hero__photo,
-  .home-hero__name,
-  .home-hero__tagline,
-  .home-hero__bio,
-  .home-hero__links {
+  .home-hero {
     animation: none;
-    opacity: 1;
   }
 
   * {
@@ -490,44 +327,30 @@ button:focus-visible {
 
 
 /*
-   Home — sections on the rail: quiet label left, content right
+   Home — sections
    ========================================================================== */
 
 .home-section {
-  margin-top: 3.5rem;
+  margin-top: 3.25rem;
 
   h2 {
-    font-size: 1rem !important;
-    font-weight: 600 !important;
-    letter-spacing: 0 !important;
+    font-size: 1.35rem !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.015em !important;
     text-transform: none !important;
-    color: $muted !important;
-    margin: 0 0 1.25rem !important;
+    color: $ink !important;
+    margin: 0 0 1.4rem !important;
     padding: 0 !important;
     border: none !important;
   }
-
-  @media (min-width: #{$rail-break}) {
-    display: grid;
-    grid-template-columns: #{$rail-width} 1fr;
-    column-gap: $rail-gap;
-
-    h2 {
-      margin: 0.2rem 0 0 !important;
-    }
-  }
-}
-
-.home-section__body {
-  min-width: 0;
 }
 
 /* Research interests — an unboxed trio, typography only */
 .interest-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-  gap: 1.6rem 2.25rem;
-  margin-bottom: 1.4rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.75rem 2.25rem;
+  margin-bottom: 1.5rem;
 }
 
 .interest-item {
@@ -543,7 +366,7 @@ button:focus-visible {
   p {
     font-size: 0.9rem !important;
     line-height: 1.65 !important;
-    color: $muted !important;
+    color: $ink-muted !important;
     margin: 0 !important;
   }
 }
@@ -563,11 +386,10 @@ button:focus-visible {
       content: '\2192';
       display: inline-block;
       margin-left: 0.4em;
-      transition: transform 0.18s $ease-out-quint;
+      transition: transform 0.18s $ease-out-quart;
     }
 
     &:hover {
-      color: $accent-hi;
       text-decoration: underline;
       text-underline-offset: 0.18em;
 
@@ -580,7 +402,7 @@ button:focus-visible {
 
 .muted-note {
   font-size: 0.95rem;
-  color: $muted;
+  color: $ink-muted;
   margin-bottom: 0.5rem;
 
   a {
@@ -590,15 +412,14 @@ button:focus-visible {
 
 
 /*
-   Research page — status on the rail, prose right
+   Research page — ruled list, not cards
    ========================================================================== */
 
 .research-intro {
   font-size: 1rem;
-  line-height: 1.8;
-  color: $body-text;
-  max-width: 44rem;
-  margin-bottom: 2.75rem;
+  line-height: 1.75;
+  color: $ink-soft;
+  margin-bottom: 2.5rem;
 
   a {
     color: $accent;
@@ -606,7 +427,6 @@ button:focus-visible {
     font-weight: 500;
 
     &:hover {
-      color: $accent-hi;
       text-decoration: underline;
       text-underline-offset: 0.18em;
     }
@@ -618,49 +438,19 @@ button:focus-visible {
 }
 
 .project {
-  padding: 2.1rem 0;
+  padding: 2rem 0;
   border-top: 1px solid $rule;
 
   &:last-child {
     padding-bottom: 0.5rem;
   }
-
-  @media (min-width: #{$rail-break}) {
-    display: grid;
-    grid-template-columns: #{$rail-width} 1fr;
-    column-gap: $rail-gap;
-    grid-template-rows: auto auto auto;
-
-    .project__status {
-      grid-column: 1;
-      grid-row: 1;
-      justify-self: start;
-      margin-top: 0.3rem;
-      margin-bottom: 0;
-    }
-
-    .project__title {
-      grid-column: 2;
-      grid-row: 1;
-    }
-
-    .project__body {
-      grid-column: 2;
-      grid-row: 2;
-    }
-
-    .project__links {
-      grid-column: 2;
-      grid-row: 3;
-    }
-  }
 }
 
 .project__title {
-  font-size: 1.18rem !important;
+  font-size: 1.15rem !important;
   font-weight: 700 !important;
   color: $ink !important;
-  margin: 0 0 0.6rem !important;
+  margin: 0 0 0.5rem !important;
   line-height: 1.35 !important;
   letter-spacing: -0.01em;
   border: none !important;
@@ -673,7 +463,7 @@ button:focus-visible {
   gap: 0.45em;
   font-size: 0.82rem;
   font-weight: 600;
-  color: $muted;
+  color: $ink-muted;
   margin-bottom: 0.85rem;
 
   &::before {
@@ -681,7 +471,7 @@ button:focus-visible {
     width: 7px;
     height: 7px;
     border-radius: 50%;
-    background: $muted;
+    background: $ink-muted;
   }
 
   &.active {
@@ -689,15 +479,14 @@ button:focus-visible {
 
     &::before {
       background: $accent;
-      box-shadow: 0 0 8px rgba(217, 154, 91, 0.5);
     }
   }
 }
 
 .project__body {
   font-size: 0.96rem;
-  line-height: 1.78;
-  color: $body-text;
+  line-height: 1.72;
+  color: $ink-soft;
   margin: 0;
 }
 
@@ -713,7 +502,6 @@ button:focus-visible {
     font-weight: 600;
 
     &:hover {
-      color: $accent-hi;
       text-decoration: underline;
       text-underline-offset: 0.18em;
     }
@@ -722,12 +510,12 @@ button:focus-visible {
 
 
 /*
-   Publications & blog lists — date on the rail
+   Publications & blog lists
    ========================================================================== */
 
 .pubs-note {
   font-size: 0.95rem;
-  color: $muted;
+  color: $ink-muted;
   margin-bottom: 2rem;
 
   a {
@@ -746,7 +534,7 @@ button:focus-visible {
 }
 
 .archive__item {
-  padding: 1.4rem 0;
+  padding: 1.35rem 0;
   margin-bottom: 0;
   border-top: 1px solid $rule;
 
@@ -761,46 +549,17 @@ button:focus-visible {
   padding-top: 0.5rem;
 }
 
-.entries-list .archive__item {
-  @media (min-width: #{$rail-break}) {
-    display: grid;
-    grid-template-columns: #{$rail-width} 1fr;
-    column-gap: $rail-gap;
-
-    .page__meta {
-      grid-column: 1;
-      grid-row: 1;
-      margin: 0.25rem 0 0;
-
-      i {
-        display: none; /* the rail position says "date"; the icon is noise */
-      }
-    }
-
-    .archive__item-title {
-      grid-column: 2;
-      grid-row: 1;
-    }
-
-    .archive__item-excerpt {
-      grid-column: 2;
-      grid-row: 2;
-    }
-  }
-}
-
 .archive__item-title {
-  font-size: 1.08rem !important;
+  font-size: 1.05rem !important;
   font-weight: 600 !important;
   margin: 0 0 0.3rem !important;
   line-height: 1.4 !important;
 
   a {
-    color: $ink !important;
+    color: $accent !important;
     text-decoration: none !important;
 
     &:hover {
-      color: $accent-hi !important;
       text-decoration: underline !important;
       text-underline-offset: 0.18em;
     }
@@ -809,14 +568,20 @@ button:focus-visible {
 
 .archive__item-excerpt {
   font-size: 0.9rem !important;
-  color: $muted !important;
+  color: $ink-muted !important;
   line-height: 1.6 !important;
   margin-top: 0.2rem !important;
 }
 
 .page__meta {
-  color: $muted;
+  color: $ink-muted;
   font-size: 0.85rem;
+}
+
+.page__content hr {
+  border: 0;
+  border-top: 1px solid $rule;
+  margin: 2rem 0;
 }
 
 
@@ -829,7 +594,7 @@ button:focus-visible {
 }
 
 .password-gate__note {
-  color: $body-text;
+  color: $ink-soft;
   font-size: 0.98rem;
   margin-bottom: 1.25rem;
 }
@@ -847,10 +612,10 @@ button:focus-visible {
     border-radius: 8px;
     font-size: 0.95rem;
     color: $ink;
-    background: $surface;
+    background: #fff;
 
     &::placeholder {
-      color: $muted;
+      color: $ink-muted;
       opacity: 1;
     }
 
@@ -864,16 +629,16 @@ button:focus-visible {
   button {
     padding: 0.55em 1.2em;
     background: $accent;
-    color: $bg;
+    color: #fff;
     border: none;
     border-radius: 8px;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 0.95rem;
     cursor: pointer;
     transition: background 0.15s ease;
 
     &:hover {
-      background: $accent-hi;
+      background: #3d2068;
     }
 
     &:focus-visible {
@@ -884,7 +649,7 @@ button:focus-visible {
 }
 
 .password-gate__error {
-  color: #ff8a7a; /* 6.7:1 on $site-bg */
+  color: #b3261e;
   font-size: 0.9rem;
   margin-top: 0.75rem;
 }
