@@ -55,10 +55,21 @@ $sidebar-link-max-width     : 250px;
    Colors
    ========================================================================== */
 
-/* Northwestern & Driscoll Lab Palette */
+/* Northwestern & Driscoll Lab Palette (legacy, kept for reference) */
 $northwestern-purple        : #4E2A84;
 $rich-black                 : #101010;
 $clean-gray                 : #e0e0e0;
+
+/* Dark atmospheric palette — warm near-black, bone ink, copper accent.
+   All text tokens verified >= 4.5:1 on $site-bg (WCAG AA). */
+$site-bg                    : #131110;  /* page background */
+$site-surface               : #1c1917;  /* inputs, code blocks */
+$site-ink                   : #ece7df;  /* headings, primary text — 15.3:1 */
+$site-body                  : #b8b1a6;  /* body prose — 8.9:1 */
+$site-muted                 : #8f887c;  /* metadata — 5.4:1 */
+$site-rule                  : #2a2620;  /* hairline separators */
+$site-accent                : #d99a5b;  /* copper — links, actions — 7.8:1 */
+$site-accent-bright         : #e8b478;  /* link hover */
 
 $gray                       : #333; 
 $dark-gray                  : #333; 
@@ -66,16 +77,16 @@ $darker-gray                : #111;
 $light-gray                 : #f2f2f2; 
 $lighter-gray               : #fafafa; 
 
-$body-color                 : #fff;
-$background-color           : #fff;
-$code-background-color      : #fafafa;
-$code-background-color-dark : #222;
-$text-color                 : #333333; /* Dark gray is softer than pure black */
-$border-color               : #dddddd;
+$body-color                 : $site-bg;
+$background-color           : $site-bg;
+$code-background-color      : $site-surface;
+$code-background-color-dark : $site-surface;
+$text-color                 : $site-body;
+$border-color               : $site-rule;
 
 /* This controls the sidebar, buttons, and accents */
-$primary-color              : $northwestern-purple; 
-$info-color                 : $northwestern-purple; /* Makes links purple by default */
+$primary-color              : $site-accent;
+$info-color                 : $site-accent;
 $success-color              : #62c462;
 $warning-color              : #f89406;
 $danger-color               : #ee5f5b;
@@ -108,11 +119,11 @@ $xing-color                 : #006567;
 
 
 /* links */
-$link-color                 : #4E2A84; /* Northwestern Purple */
-$link-color-hover           : #000000; /* Black on hover */
-$link-color-visited         : #4E2A84;
-$masthead-link-color        : #fafafa; /* Navigation menu text */
-$masthead-link-color-hover  : #ffffff; /* Navigation brightens to white on hover */
+$link-color                 : $site-accent;
+$link-color-hover           : $site-accent-bright;
+$link-color-visited         : $site-accent;
+$masthead-link-color        : $site-muted; /* Navigation menu text */
+$masthead-link-color-hover  : $site-ink;   /* Navigation brightens on hover */
 
 
 

@@ -4,8 +4,10 @@
 
 .masthead {
   position: fixed;
-  background: #4E2A84;
-  border-bottom: 1px solid $border-color;
+  background: rgba(19, 17, 16, 0.82);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(236, 231, 223, 0.06);
   height: $masthead-height;
   top: 0;
   width: 100%;
@@ -37,7 +39,7 @@
 }
 
 .masthead__menu {
-  background: #4E2A84;
+  background: transparent;
   ul {
     margin: 0;
     padding: 0;
@@ -47,7 +49,7 @@
 }
 
 .masthead__menu-item {
-  background: #4E2A84;
+  background: transparent;
   display: block;
   list-style-type: none;
   white-space: nowrap;

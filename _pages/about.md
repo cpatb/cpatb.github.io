@@ -7,6 +7,7 @@ redirect_from:
 ---
 
 <div class="home-hero">
+  <canvas id="suspension" class="home-hero__canvas" aria-hidden="true"></canvas>
   <img class="home-hero__photo" src="/images/profile.png" alt="Charlie Burton">
   <div class="home-hero__content">
     <h1 class="home-hero__name">Charlie Burton</h1>
@@ -22,30 +23,38 @@ redirect_from:
 
 <div class="home-section">
   <h2>Research Interests</h2>
-  <div class="interest-list">
-    <div class="interest-item">
-      <h3>Shear Thickening</h3>
-      <p>Mechanisms behind discontinuous shear thickening in dense suspensions under applied stress.</p>
+  <div class="home-section__body">
+    <div class="interest-list">
+      <div class="interest-item">
+        <h3>Shear Thickening</h3>
+        <p>Mechanisms behind discontinuous shear thickening in dense suspensions under applied stress.</p>
+      </div>
+      <div class="interest-item">
+        <h3>Soft Matter</h3>
+        <p>Complex mechanical behavior of colloidal systems, gels, and non-Newtonian fluids.</p>
+      </div>
+      <div class="interest-item">
+        <h3>Dense Suspensions</h3>
+        <p>Rheology and microstructure of particle-laden flows near the jamming transition.</p>
+      </div>
     </div>
-    <div class="interest-item">
-      <h3>Soft Matter</h3>
-      <p>Complex mechanical behavior of colloidal systems, gels, and non-Newtonian fluids.</p>
-    </div>
-    <div class="interest-item">
-      <h3>Dense Suspensions</h3>
-      <p>Rheology and microstructure of particle-laden flows near the jamming transition.</p>
-    </div>
+    <p class="more-link"><a href="/research/">View Research Projects</a></p>
   </div>
-  <p class="more-link"><a href="/research/">View Research Projects</a></p>
 </div>
 
 <div class="home-section">
   <h2>Recent Publications</h2>
-  <p class="muted-note">Coming soon — find current work on <a href="https://scholar.google.com/citations?user=HRr72-UAAAAJ&hl=en&authuser=1&oi=ao">Google Scholar</a>.</p>
-  <p class="more-link"><a href="/publications/">All Publications</a></p>
+  <div class="home-section__body">
+    <p class="muted-note">Coming soon — find current work on <a href="https://scholar.google.com/citations?user=HRr72-UAAAAJ&hl=en&authuser=1&oi=ao">Google Scholar</a>.</p>
+    <p class="more-link"><a href="/publications/">All Publications</a></p>
+  </div>
 </div>
 
 <div class="home-section">
   <h2>Contact</h2>
-  <p>Reach me at <a href="mailto:cpb@u.northwestern.edu">cpb@u.northwestern.edu</a> — happy to discuss research, collaboration, or book suggestions.</p>
+  <div class="home-section__body">
+    <p>Reach me at <a href="mailto:cpb@u.northwestern.edu">cpb@u.northwestern.edu</a> — happy to discuss research, collaboration, or book suggestions.</p>
+  </div>
 </div>
+
+<script src="/assets/js/suspension.js" defer></script>
