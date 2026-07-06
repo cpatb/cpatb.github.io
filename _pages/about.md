@@ -1,6 +1,5 @@
 ---
 permalink: /
-title: ""
 author_profile: false
 redirect_from: 
   - /about/
@@ -22,31 +21,31 @@ redirect_from:
 </div>
 
 <div class="home-section">
-  <h2 class="section-label">Research Interests</h2>
-  <div class="interest-tiles">
-    <div class="interest-tile">
+  <h2>Research Interests</h2>
+  <div class="interest-list">
+    <div class="interest-item">
       <h3>Shear Thickening</h3>
       <p>Mechanisms behind discontinuous shear thickening in dense suspensions under applied stress.</p>
     </div>
-    <div class="interest-tile">
+    <div class="interest-item">
       <h3>Soft Matter</h3>
       <p>Complex mechanical behavior of colloidal systems, gels, and non-Newtonian fluids.</p>
     </div>
-    <div class="interest-tile">
+    <div class="interest-item">
       <h3>Dense Suspensions</h3>
       <p>Rheology and microstructure of particle-laden flows near the jamming transition.</p>
     </div>
   </div>
-  <p class="section-action"><a href="/research/" class="btn btn--primary btn--small">View Research Projects</a></p>
+  <p class="more-link"><a href="/research/">View Research Projects</a></p>
 </div>
 
 <div class="home-section">
-  <h2 class="section-label">Recent Publications</h2>
+  <h2>Recent Publications</h2>
   <p class="muted-note">Coming soon — find current work on <a href="https://scholar.google.com/citations?user=HRr72-UAAAAJ&hl=en&authuser=1&oi=ao">Google Scholar</a>.</p>
-  <p class="section-action"><a href="/publications/" class="btn btn--primary btn--small">All Publications</a></p>
+  <p class="more-link"><a href="/publications/">All Publications</a></p>
 </div>
 
 <div class="home-section">
-  <h2 class="section-label">Contact</h2>
+  <h2>Contact</h2>
   <p>Reach me at <a href="mailto:cpb@u.northwestern.edu">cpb@u.northwestern.edu</a> — happy to discuss research, collaboration, or book suggestions.</p>
 </div>
