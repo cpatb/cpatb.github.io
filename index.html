@@ -27,18 +27,12 @@
   figcaption { font-size: 0.85em; color: #666; margin-top: 0.4em; }
   ul { padding-left: 1.2em; }
   li { margin-bottom: 0.4em; }
-  input, textarea, button { font: inherit; }
-  input[type=text], textarea { width: 100%; box-sizing: border-box; padding: 0.4em 0.5em; border: 1px solid #bbb; border-radius: 3px; background: transparent; color: inherit; }
-  button { padding: 0.35em 0.9em; border: 1px solid #888; border-radius: 3px; background: transparent; color: inherit; cursor: pointer; }
-  .note { border-left: 2px solid #ddd; padding-left: 0.9em; margin: 1.2em 0; }
-  .note p { margin: 0 0 0.25em; }
+  .pubs li { margin-bottom: 0.9em; }
   @media (max-width: 480px) { .me { width: 90px; } body { font-size: 16px; margin-top: 1.5em; } }
   @media (prefers-color-scheme: dark) {
     body { background: #111; color: #e6e6e6; }
     a { color: #7fa8ff; }
     .muted, figcaption { color: #999; }
-    .note { border-color: #444; }
-    input[type=text], textarea { border-color: #555; }
   }
 </style>
 </head>
@@ -69,7 +63,17 @@
 
 <h2>Publications</h2>
 
-<p>Full list coming soon. For now, <a href="https://scholar.google.com/citations?user=HRr72-UAAAAJ&hl=en">Google Scholar</a> has the most up-to-date version.</p>
+<ul class="pubs">
+  <li>J. A. K. Chong Chie, M. L. Cooper, S. A. Persohn, <b>C. P. Burton</b>, P. Salama, P. R. Territo. Automated airways characterization and assessment of cystic fibrosis from CT imaging. <i>medRxiv</i> preprint, 2026. <a href="https://doi.org/10.64898/2026.06.09.26355170">doi:10.64898/2026.06.09.26355170</a></li>
+  <li>A. Mobaseri, L. Gordillo, <b>C. Burton</b>, S. Yoon, D. Lee, S. Kumar, M. M. Driscoll, X. Cheng. Inertia-dilatancy interplay governs shear thickening drop impact. <i>Physical Review Letters</i> <b>136</b>, 148201 (2026). <a href="https://doi.org/10.1103/fyx7-jb1d">doi:10.1103/fyx7-jb1d</a></li>
+  <li>K. D. Onos, P. B. Lin, R. S. Pandey, S. A. Persohn, <b>C. P. Burton</b>, E. W. Miner, K. Eldridge, J. Nyandu Kanyinda, K. E. Foley, G. W. Carter, G. R. Howell, P. R. Territo. Assessment of neurovascular uncoupling: <i>APOE</i> status is a key driver of early metabolic and vascular dysfunction. <i>Alzheimer's &amp; Dementia</i> <b>20</b>, 4951–4969 (2024). <a href="https://doi.org/10.1002/alz.13842">doi:10.1002/alz.13842</a></li>
+  <li>K. P. Kotredes, R. S. Pandey, S. Persohn, K. Elderidge, <b>C. P. Burton</b>, E. W. Miner, and 19 others. Characterizing molecular and synaptic signatures in mouse models of late-onset Alzheimer's disease independent of amyloid and tau pathology. <i>Alzheimer's &amp; Dementia</i> <b>20</b>, 4126–4146 (2024). <a href="https://doi.org/10.1002/alz.13828">doi:10.1002/alz.13828</a></li>
+  <li>J. A. K. Chong Chie, S. C. Persohn, E. W. Miner, <b>C. P. Burton</b>, P. Salama, P. R. Territo. Total variation based 2D image registration of post-mortem mouse brain images. <i>2024 IEEE International Symposium on Biomedical Imaging (ISBI)</i>, pp. 1–4 (2024). <a href="https://doi.org/10.1109/ISBI56570.2024.10635196">doi:10.1109/ISBI56570.2024.10635196</a></li>
+  <li>E. J. Chumin, <b>C. P. Burton</b>, R. Silvola, E. W. Miner, S. C. Persohn, M. Veronese, P. R. Territo. Brain metabolic network covariance and aging in a mouse model of Alzheimer's disease. <i>Alzheimer's &amp; Dementia</i> <b>20</b>, 1538–1549 (2024). <a href="https://doi.org/10.1002/alz.13538">doi:10.1002/alz.13538</a></li>
+  <li><b>C. P. Burton</b>, E. J. Chumin, A. Y. Collins, S. A. Persohn, K. D. Onos, R. S. Pandey, S. K. Quinney, P. R. Territo. Levetiracetam modulates brain metabolic networks and transcriptomic signatures in the 5XFAD mouse model of Alzheimer's disease. <i>Frontiers in Neuroscience</i> <b>17</b>, 1336026 (2024). <a href="https://doi.org/10.3389/fnins.2023.1336026">doi:10.3389/fnins.2023.1336026</a></li>
+</ul>
+
+<p class="muted">Also on <a href="https://scholar.google.com/citations?user=HRr72-UAAAAJ&hl=en">Google Scholar</a>.</p>
 
 <h2>Software</h2>
 
@@ -96,49 +100,6 @@
 
 <p><a href="mailto:cpb@u.northwestern.edu">cpb@u.northwestern.edu</a>. Email me about research, working together, or books you think I should read.</p>
 
-<h2>Guestbook</h2>
-
-<p>Leave a note. I read everything, and the ones I approve show up below.</p>
-
-<form id="gb" action="https://formspree.io/f/mljeyepw" method="POST">
-  <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
-  <input type="hidden" name="_subject" value="Guestbook note from cpatb.github.io">
-  <p><input type="text" name="name" placeholder="name (optional)" maxlength="60"></p>
-  <p><textarea name="message" required placeholder="say something" rows="4" maxlength="1000"></textarea></p>
-  <p><button type="submit">send</button> <span id="gb-status" class="muted"></span></p>
-</form>
-
-<div id="gb-list" class="muted">Loading notes…</div>
-
-<script>
-(function () {
-  var form = document.getElementById('gb'), status = document.getElementById('gb-status');
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    status.textContent = 'sending…';
-    fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } })
-      .then(function (r) { if (!r.ok) throw new Error(); form.reset(); status.textContent = 'got it, thanks. it shows up once I approve it.'; })
-      .catch(function () { status.textContent = 'that didn\'t send. try emailing me instead.'; });
-  });
-
-  var list = document.getElementById('gb-list');
-  fetch('messages.json', { cache: 'no-store' })
-    .then(function (r) { return r.json(); })
-    .then(function (notes) {
-      list.className = '';
-      if (!notes.length) { list.className = 'muted'; list.textContent = 'No notes yet.'; return; }
-      list.innerHTML = '';
-      notes.slice().reverse().forEach(function (n) {
-        var d = document.createElement('div'); d.className = 'note';
-        var q = document.createElement('p'); q.textContent = n.message; d.appendChild(q);
-        var m = document.createElement('p'); m.className = 'muted';
-        m.textContent = (n.name || 'anonymous') + (n.date ? ' · ' + n.date : ''); d.appendChild(m);
-        list.appendChild(d);
-      });
-    })
-    .catch(function () { list.textContent = 'No notes yet.'; });
-})();
-</script>
 
 </body>
 </html>
